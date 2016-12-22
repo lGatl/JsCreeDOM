@@ -25,13 +25,14 @@ var G = function(arg) {
 
   var selection = function(arg) {
     var select, selects = [];
+
     var k = Object.keys(arg)[0];
     var v = Object.values(arg)[0];
 
     (k === "id") ? select = document.getElementById(v):
     (k === "class") ? select = document.getElementsByClassName(v):
       (k === "tag") ? select = document.getElementsByTagName(v) : "";
-
+    console.log('select', select);
     if (select.length) {
       for (var s = 0; s < select.length; s++) {
         selects.push(select[s])
